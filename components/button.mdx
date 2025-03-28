@@ -1,0 +1,188 @@
+---
+title: 'Button'
+description: 'A versatile button component with multiple states and variants'
+---
+
+# Button Component
+
+The Button component is a versatile UI element that supports multiple states, variants, and sizes to accommodate different design needs and user interactions.
+
+## Basic Usage
+
+```html
+<button 
+  class="btn btn-primary" 
+  [disabled]="isDisabled"
+  (click)="handleClick()">
+  Button Text
+</button>
+```
+
+## States
+
+### Default
+
+The standard appearance of the button.
+
+<Frame>
+  <img src="/images/button-default.png" />
+</Frame>
+
+### Hover
+
+The appearance when a user hovers over the button.
+
+<Frame>
+  <img src="/images/button-hover.png" />
+</Frame>
+
+### Active/Pressed
+
+The appearance when a user clicks or taps on the button.
+
+<Frame>
+  <img src="/images/button-active.png" />
+</Frame>
+
+### Disabled
+
+The appearance when the button is disabled.
+
+<Frame>
+  <img src="/images/button-disabled.png" />
+</Frame>
+
+### Loading
+
+The appearance when an action is being processed.
+
+<Frame>
+  <img src="/images/button-loading.png" />
+</Frame>
+
+## Variants
+
+### Primary
+
+```html
+<button class="btn btn-primary">Primary Button</button>
+```
+
+### Secondary
+
+```html
+<button class="btn btn-secondary">Secondary Button</button>
+```
+
+### Tertiary
+
+```html
+<button class="btn btn-tertiary">Tertiary Button</button>
+```
+
+### Destructive
+
+```html
+<button class="btn btn-destructive">Destructive Button</button>
+```
+
+## Sizes
+
+### Small
+
+```html
+<button class="btn btn-primary btn-sm">Small Button</button>
+```
+
+### Medium (Default)
+
+```html
+<button class="btn btn-primary">Medium Button</button>
+```
+
+### Large
+
+```html
+<button class="btn btn-primary btn-lg">Large Button</button>
+```
+
+## With Icons
+
+### Leading Icon
+
+```html
+<button class="btn btn-primary">
+  <i class="icon icon-plus"></i>
+  Button with Leading Icon
+</button>
+```
+
+### Trailing Icon
+
+```html
+<button class="btn btn-primary">
+  Button with Trailing Icon
+  <i class="icon icon-arrow-right"></i>
+</button>
+```
+
+### Icon Only
+
+```html
+<button class="btn btn-icon">
+  <i class="icon icon-settings"></i>
+</button>
+```
+
+## Implementation Guide
+
+### Angular Component Properties
+
+| Property    | Type      | Default   | Description |
+|-------------|-----------|-----------|-------------|
+| variant     | string    | 'primary' | Button style variant ('primary', 'secondary', 'tertiary', 'destructive') |
+| size        | string    | 'md'      | Button size ('sm', 'md', 'lg') |
+| disabled    | boolean   | false     | Whether the button is disabled |
+| isLoading   | boolean   | false     | Whether to show loading state |
+| type        | string    | 'button'  | HTML button type ('button', 'submit', 'reset') |
+| ariaLabel   | string    | undefined | Aria label for accessibility |
+
+### Events
+
+| Event       | Description |
+|-------------|-------------|
+| clicked     | Emitted when button is clicked |
+| focusChange | Emitted when button focus state changes |
+
+### CSS Variables
+
+```css
+:root {
+  --btn-primary-bg: #4F46E5;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-border: transparent;
+  --btn-primary-hover-bg: #4338CA;
+  --btn-primary-active-bg: #3730A3;
+  --btn-primary-disabled-bg: #EEF2FF;
+  --btn-primary-disabled-text: #A5B4FC;
+  
+  /* Additional variables for other variants */
+}
+```
+
+## Accessibility Considerations
+
+- Ensure proper contrast ratios between text and background colors
+- Use appropriate aria attributes for non-standard buttons
+- Keyboard navigation support with visible focus states
+- Loading states should announce status change to screen readers
+
+## Live Example
+
+<iframe
+  src="https://stackblitz.com/edit/angular-button-example?embed=1&file=src/app/button/button.component.ts"
+  style={{ width: '100%', height: '500px', border: '0', borderRadius: '4px', overflow: 'hidden' }}
+  title="Angular Button Component Example"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
